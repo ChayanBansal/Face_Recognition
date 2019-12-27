@@ -263,7 +263,7 @@ def model_without_transfer_learning():
     race_output = Dense(units=len(output_mapper['race']), activation='softmax', name='race_output')(_)
 
     # for emotion prediction
-    _ = Dense(units=320, activation='sigmoid')(CNN_shared_layer_end)
+    _ = Dense(units=320, activation='relu')(CNN_shared_layer_end)
     _ = Dense(units=128, activation='relu')(_)
     emotion_output = Dense(units=len(output_mapper['emotion']), activation='softmax', name='emotion_output')(_)
 
